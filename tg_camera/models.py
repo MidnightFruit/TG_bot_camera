@@ -15,9 +15,8 @@ class Camera(models.Model):
 
 class Gallery(models.Model):
     name = models.CharField(max_length=32, verbose_name="имя галереи")
-    owner = models.ForeignKey(User, )
-
-
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="владелец галереи")
+    description = models.CharField(**NULLABLE, max_length=1024, verbose_name="описание галереи")
 
 class Image(models.Model):
     name = models.CharField(max_length=128, verbose_name="имя рисунка")
